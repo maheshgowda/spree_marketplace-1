@@ -40,13 +40,14 @@ ru:
   signup: Регистрация
   signup_to_become_a_supplier: 'Вы должны зарегистрироваться чтобы стать поставщиком'
   spree:
-    promotionable: Продвигаемый
-    order_already_updated: Заказ был изменен ранее.
-    drop_ship_orders: Заказы Drop Ship
-    drop_ship_settings: Настройки Drop Ship
+    promotionable: "Продвигаемый"
+    order_already_updated: "Заказ был изменен ранее."
+    drop_ship_orders: "Заказы Drop Ship"
+    drop_ship_settings: "Настройки Drop Ship"
     must_be_logged_in: 'Вы должны быть аутентифицированы'
-    about: О магазине
-    supplier_has_no_description: Нет описания
+    about: "О магазине"
+    supplier_has_no_description: "Нет описания"
+    no_suppliers_found: "Не найдено ни одного продавца"
     avatar: Аватар
     background: Фон
     slogan: Слоган

@@ -4,7 +4,8 @@
 en:
   hello: "Hello world"
   spree:
-    order_already_updated: Order already updated.
+    order_already_updated: "Order already updated."
     about: "About"
     suppliers: "Suppliers"
     supplier_has_no_description: "Supplier has no description"
+    no_suppliers_found: "No suppliers found"
