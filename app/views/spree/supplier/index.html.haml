@@ -1,14 +1,16 @@
 - if @suppliers.any?
   .row#suppliers
     - @suppliers.each do |supplier|
-      .col-md-3.col-lg-3.suppliers-list-item{'data-hook' => 'suppliers_list_item' }
+      .col-md-3.col-lg-3.suppliers-list-item{ 'data-hook' => 'suppliers_list_item' }
         .panel.panel-default
           .panel-body.text-center.supplier-body
-            = link_to image_tag(supplier.avatar.url(:product)), supplier_path(supplier.slug), class: 'thumb-image'
+            = link_to image_tag(supplier.avatar.url(:product)),
+                                supplier_path(supplier.slug),
+                                class: 'thumb-image'
           .panel-footer.text-center
             = link_to supplier.name, supplier_path(supplier.slug)
 - else
-  .alert.alert-info= Spree.t(:no_elements_here)
+  .alert.alert-info= Spree.t(:no_suppliers_found)
   
 - if @suppliers.respond_to?(:num_pages)
   = paginate @suppliers, theme: 'twitter-bootstrap-3'

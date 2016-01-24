@@ -49,9 +49,9 @@ ru:
     supplier_has_no_description: "Нет описания"
     no_suppliers_found: "Не найдено ни одного продавца"
     avatar: Аватар
-    background: Фон
-    slogan: Слоган
-    description: Описание
+    background: "Фон"
+    slogan: "Слоган"
+    description: "Описание"
     admin:
       tab:
         profile: Профиль
@@ -71,7 +71,7 @@ ru:
           drop_ship_order_approval_confirmation: Se le enviará una notificación por correo electrónico a cada proveedor. ¿Desea continuar?
       suppliers:
         edit:
-          back_to_suppliers: Вернуться к списку поставщиков
+          back_to_suppliers: "Вернуться к списку продавцов"
         new:
           new_supplier: Новый поставщик
         form:
@@ -84,7 +84,7 @@ ru:
         orders_sent: Todas las ordenes fueron enviadas a los proveedores
         orders_not_sent: Algunas o todas las ordenes no pudieron ser enviadas. Por favor contacte directamente al proveedor.
     back_to_orders_list: Вернуться к списоку заказов
-    back_to_suppliers: Вернуться к списку поставщиков
+    back_to_suppliers: "Вернуться к списку продавцов"
     business: Сделка
     cancel: Отмена
     company_info: Информация о компании
@@ -97,12 +97,14 @@ ru:
     automatically_deliver_orders_to_supplier: Enviar orden automaticamente a los proveedores
     send_supplier_email: Написать письмо поставщику
     individual: Individual
-    listing_suppliers: Список поставщиков
+    listing_suppliers: "Список продавцов"
     manage: Управлять
     name: Имя
     or: или
-    new_supplier: Новый поставщик
-    suppliers: Поставщики
+    new_supplier: "Новый магазин"
+    suppliers: "Продавцы"
+    supplier: "Продавец"
+    my_shop: "Мой магазин"
     listing_shipments: 'Список поставок'
     order_state:
       active: Активный

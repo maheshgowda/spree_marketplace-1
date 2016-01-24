@@ -14,7 +14,9 @@
         = link_to supplier.email, "mailto: #{supplier.email}"
   .supplier-nav
     %ul.nav.nav-pills
-      %li{class:('active' if selected_tab == :about)}= link_to Spree.t(:about), supplier_path(supplier.slug)
-      %li{class:('active' if selected_tab == :products)}= link_to Spree.t(:products), supplier_products_path(supplier.slug)
+      %li{class:('active' if selected_tab == :about)}
+        = link_to Spree.t(:about), supplier_path(supplier.slug)
+      %li{class:('active' if selected_tab == :products)}
+        = link_to Spree.t(:products), supplier_products_path(supplier.slug)
 .supplier-content
   = yield

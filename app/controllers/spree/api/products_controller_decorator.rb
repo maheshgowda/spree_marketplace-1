@@ -12,14 +12,17 @@ def create
   params[:product][:available_on] ||= Time.now
   set_up_shipping_category
 
-  options = { variants_attrs: variants_params, options_attrs: option_types_params }
+  options = {
+    variants_attrs: variants_params,
+    options_attrs: option_types_params
+  }
   @product = Spree::Core::Importer::Product.new(nil, product_params, options).create
 
   if @product.persisted?
     @product.add_supplier!(spree_current_user.supplier) if spree_current_user.supplier
     respond_with(@product, :status => 201, :default_template => :show)
   else
-    invalid_resource!(@product)
+    invalid_resource! @product
   end
 end
 
