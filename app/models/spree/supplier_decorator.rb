@@ -1,4 +1,7 @@
 Spree::Supplier.class_eval do
+  
+  scope :active, ->() { where active: true }
+  
   has_attached_file :background,
     styles: { large: '1200x300#' },
     default_style: :large,
@@ -14,5 +17,5 @@ Spree::Supplier.class_eval do
 
   validates_attachment :avatar, content_type: { content_type: /\Aimage\/.*\Z/ }
   validates_attachment :background, content_type: { content_type: /\Aimage\/.*\Z/ }
-
+  
 end

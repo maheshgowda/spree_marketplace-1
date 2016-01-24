@@ -5,7 +5,7 @@ module Spree
 
     # Page with list of all suppliers.
     def index
-      @suppliers = Spree::Supplier::all
+      @suppliers = Spree::Supplier.active
     end
     
     def new
