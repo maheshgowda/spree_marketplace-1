@@ -6,12 +6,15 @@
         = image_tag supplier.avatar
       .supplier-property.supplier-name
         = supplier.name
-      .supplier-property.supplier-slogan
-        = supplier.slogan
-      .supplier-property.supplier-url
-        = link_to supplier.url, supplier.url
-      .supplier-property.supplier-email
-        = link_to supplier.email, "mailto: #{supplier.email}"
+      - if supplier.slogan
+        .supplier-property.supplier-slogan
+          = supplier.slogan
+      - if supplier.url
+        .supplier-property.supplier-url
+          = link_to supplier.url, supplier.url
+      - if supplier.email
+        .supplier-property.supplier-email
+          = link_to supplier.email, "mailto: #{supplier.email}"
   .supplier-nav
     %ul.nav.nav-pills
       %li{class:('active' if selected_tab == :about)}

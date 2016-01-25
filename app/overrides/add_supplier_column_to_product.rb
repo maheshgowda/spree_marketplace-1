@@ -9,13 +9,11 @@ Deface::Override.new(virtual_path: 'spree/products/show',
   insert_after: 'div[data-hook="product_right_part"]',
   text:
     '<div class="col-md-2 text-center">
-      <% if @product.suppliers.any? %>
-        <a href="<%= supplier_path(@product.suppliers.first.slug) %>">
-          <div class="product-supplier-avatar"><%= image_tag @product.suppliers.first.avatar %></div>
-        </a>
-        <a href="<%= supplier_path(@product.suppliers.first.slug) %>">
-          <div class="product-supplier-name"><%= @product.suppliers.first.name %></div>
-        </a>
-      <% end %>
+      <a href="<%= supplier_path(@product.suppliers.first.slug) %>">
+        <div class="product-supplier-avatar"><%= image_tag @product.suppliers.first.avatar %></div>
+      </a>
+      <a href="<%= supplier_path(@product.suppliers.first.slug) %>">
+        <div class="product-supplier-name"><%= @product.suppliers.first.name %></div>
+      </a>
     </div>'
 )

@@ -1,4 +1,4 @@
-%h1= Spree.t(:new_shop)
+%h1= Spree.t(:new_store)
 
 = form_for @supplier, url: supplier_index_path do |f|
   = render 'spree/shared/error_messages', target: @supplier
@@ -8,4 +8,4 @@
   .form-group
     = f.label :email
     = f.text_field :email, class: 'form-control'
-  = f.submit Spree.t(:create_shop), class: 'btn btn-primary';
+  = f.submit Spree.t(:create_store), class: 'btn btn-primary';

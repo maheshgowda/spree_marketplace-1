@@ -104,7 +104,9 @@ ru:
     new_supplier: "Новый магазин"
     suppliers: "Продавцы"
     supplier: "Продавец"
-    my_shop: "Мой магазин"
+    my_store: "Мой магазин"
+    create_store: "Открыть магазин"
+    new_store: "Новый магазин"
     listing_shipments: 'Список поставок'
     order_state:
       active: Активный

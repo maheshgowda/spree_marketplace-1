@@ -3,4 +3,4 @@
     - if @supplier.description.present?
       = @supplier.description.html_safe
     - else
-      Spree.t(:supplier_has_no_description)
+      = Spree.t(:supplier_has_no_description)
