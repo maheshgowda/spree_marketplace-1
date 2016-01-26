@@ -1,4 +1,5 @@
-= render layout: 'page', locals: { supplier: @supplier, selected_tab: :about } do
+= render layout: 'page',
+         locals: { supplier: @supplier, selected_tab: :about } do
   .well
     - if @supplier.description.present?
       = @supplier.description.html_safe

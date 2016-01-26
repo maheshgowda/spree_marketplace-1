@@ -1,6 +1,7 @@
 module Spree
   class SupplierController < Spree::BaseController
     before_action :load_model, only: [:show, :products]
+    helper_method :products_of_supplier
     
     ##
     # Page with list of all suppliers.
@@ -27,6 +28,17 @@ module Spree
     end
 
     private
+    
+    def products_of_supplier(supplier)
+      searcher = build_searcher(params.merge(include_images: true))
+      # Add belongs_to_supplier to search filter. Need refactoring.
+      def searcher.supplier=(value) @supplier = value; end
+      searcher.supplier = supplier
+      def searcher.search
+         (super || {}).merge belongs_to_supplier: @supplier
+      end
+      searcher.retrieve_products
+    end
     
     def permit_params
       params.require(:supplier).permit :name, :email

@@ -16,7 +16,8 @@ def create
     variants_attrs: variants_params,
     options_attrs: option_types_params
   }
-  @product = Spree::Core::Importer::Product.new(nil, product_params, options).create
+  @product =
+    Spree::Core::Importer::Product.new(nil, product_params, options).create
 
   if @product.persisted?
     @product.add_supplier!(spree_current_user.supplier) if spree_current_user.supplier

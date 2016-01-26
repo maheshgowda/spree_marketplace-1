@@ -1,5 +1,4 @@
 Spree::Product.class_eval do
-  
   ##
   # This product belongs active supplier.
   def belongs_active_supplier?
@@ -17,6 +16,12 @@ Spree::Product.class_eval do
       .where 'spree_suppliers.active = ?', true
   end
 
+  def self.belongs_to_supplier(supplier)
+    where supplier: supplier
+  end
+  
+  search_scopes << :belongs_to_supplier
+  
   private
 
   def populate_for_supplier!(supplier)

@@ -1,2 +1,3 @@
 = render layout: 'page', locals: { supplier: @supplier, selected_tab: :products } do
-  = render partial: 'spree/shared/products', locals: { products: @supplier.products }
+  = render partial: 'spree/shared/products',
+           locals: { products: products_of_supplier(@supplier) }
