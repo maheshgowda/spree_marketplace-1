@@ -28,12 +28,5 @@ Spree::Product.class_eval do
     # Product can belongs only one supplier
     raise Error('Product already belongs other supplier') if self.supplier
     update supplier: supplier
-
-    variants_including_master.each do |variant|
-      unless variant.suppliers.pluck(:id).include?(supplier.id)
-        variant.suppliers << supplier
-        supplier.stock_locations.each { |loc| loc.set_up_stock_item(variant) }
-      end
-    end
   end
 end
