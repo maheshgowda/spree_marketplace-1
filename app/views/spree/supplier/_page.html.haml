@@ -6,13 +6,13 @@
         = image_tag supplier.avatar
       .supplier-property.supplier-name
         = supplier.name
-      - if supplier.slogan
+      - if supplier.slogan.present?
         .supplier-property.supplier-slogan
           = supplier.slogan
-      - if supplier.url
+      - if supplier.url.present?
         .supplier-property.supplier-url
           = link_to supplier.url, supplier.url
-      - if supplier.email
+      - if supplier.email.present?
         .supplier-property.supplier-email
           = link_to supplier.email, "mailto: #{supplier.email}"
   .supplier-nav
