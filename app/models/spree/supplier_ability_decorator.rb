@@ -7,11 +7,11 @@ Spree::SupplierAbility.class_eval do
       if user.supplier
 
         can [:admin, :manage, :stock], Spree::Product do |product|
-          product.supplier_ids.include?(user.supplier_id)
+          product.supplier == user.supplier
         end
 
         can [:admin, :manage, :stock], Spree::Variant do |variant|
-          variant.supplier_ids.include?(user.supplier_id)
+          variant.product.supplier == user.supplier
         end
 
         can [:admin, :manage], Spree::Image do |image|
@@ -24,7 +24,7 @@ Spree::SupplierAbility.class_eval do
 
         can [:create], Spree::Product
         can [:create], Spree::Variant do |variant|
-          variant.product.supplier_ids.include?(user.supplier_id)
+          variant.product.supplier == supplier
         end
 
 

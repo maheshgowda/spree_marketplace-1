@@ -1,7 +1,14 @@
 Spree::Supplier.class_eval do
   
   scope :active, ->() { where active: true }
+
+  def supplier_variants
+    raise NoMethodError
+  end
   
+  has_many :products
+  has_many :variants, through: :products
+
   has_attached_file :background,
     styles: { large: '1200x300#' },
     default_style: :large,

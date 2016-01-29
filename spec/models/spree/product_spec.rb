@@ -7,10 +7,10 @@ describe Spree::Product do
       inactive_supplier = create(:supplier, active: false)
       
       product = create(:product)
-      product.add_supplier! supplier
+      product.supplier supplier
 
       inactive_product = create(:product)
-      inactive_product.add_supplier! inactive_supplier
+      inactive_product.supplier inactive_supplier
       
       expect(product.active?).to eq true
       expect(inactive_product.active?).to eq false

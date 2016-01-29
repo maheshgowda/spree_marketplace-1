@@ -9,6 +9,12 @@ module SpreeMarketplace
       g.test_framework :rspec
     end
 
+    initializer 'spree_marketplace.custom_splitters', after: 'spree_drop_ship.custom_splitters' do |app|
+      # delete not relevant splitter
+      app.config.spree.stock_splitters.delete Spree::Stock::Splitter::DropShip
+      app.config.spree.stock_splitters << Spree::Stock::Splitter::Supplier
+    end
+    
     def self.activate
       Dir.glob(File.join(File.dirname(__FILE__), '../../app/**/*_decorator*.rb')) do |c|
         Rails.configuration.cache_classes ? require(c) : load(c)
