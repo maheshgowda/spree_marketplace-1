@@ -1,5 +1,4 @@
 Spree::Admin::ProductsController.class_eval do
-
   private
   
   ##
@@ -15,5 +14,4 @@ Spree::Admin::ProductsController.class_eval do
         @collection.where(supplier_id: try_spree_current_user.supplier_id)
     end
   end
-
 end

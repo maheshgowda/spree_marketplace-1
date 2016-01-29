@@ -19,18 +19,24 @@ Spree::SupplierAbility.class_eval do
             image.viewable.supplier_ids.include?(user.supplier_id)
         end
 
+        can [:modify], Spree::Classification do |classification|
+          classification.product.supplier_id = user.supplier_id
+        end
+        can [:modify], Spree::OptionType do |option|
+          option.suppliers.exists?(user.supplier_id)
+        end
+        
+        
         # TODO Check image viewable
         can [:create], Spree::Image
 
         can [:create], Spree::Product
         can [:create], Spree::Variant do |variant|
-          variant.product.supplier == supplier
+          variant.product.supplier_id == user.supplier_id
         end
 
-
         can [:admin, :show], Spree::Prototype
-        can [:admin, :update], Spree::ProductProperty
-
+        # can [:admin, :update], Spree::ProductProperty
 
         can [:admin, :update], Spree::Price
 

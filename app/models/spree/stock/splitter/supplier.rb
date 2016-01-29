@@ -38,7 +38,6 @@ module Spree
           end
           return_next split_packages
         end
-
       end
     end
   end
