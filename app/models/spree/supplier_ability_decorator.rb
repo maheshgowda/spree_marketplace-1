@@ -30,13 +30,18 @@ Spree::SupplierAbility.class_eval do
         # TODO Check image viewable
         can [:create], Spree::Image
 
-        can [:create], Spree::Product
+        can [:create], Spree::Product do |product|
+          user.supplier?
+        end
+        
         can [:create], Spree::Variant do |variant|
           variant.product.supplier_id == user.supplier_id
         end
 
         can [:admin, :show], Spree::Prototype
-        # can [:admin, :update], Spree::ProductProperty
+        can [:admin, :update], Spree::ProductProperty do |property|
+          property.product.supplier_id == user.supplier_id
+        end
 
         can [:admin, :update], Spree::Price
 
