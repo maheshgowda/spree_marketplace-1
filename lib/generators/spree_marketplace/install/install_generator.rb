@@ -25,7 +25,17 @@ module SpreeMarketplace
         else
           puts 'Skipping rake db:migrate, don\'t forget to run it!'
         end
+        SpreeMarketplace::Engine.load_seed
       end
+      
+      def include_seed_data
+        append_file "db/seeds.rb", <<-SEEDS
+\n
+SpreeMarketplace::Engine.load_seed if defined?(SpreeMarketplace)
+        SEEDS
+      end
+      
+      
     end
   end
 end
