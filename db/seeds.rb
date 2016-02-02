@@ -12,7 +12,7 @@ def spree_marketplace_create_supplier
     puts "User #{user_login} already supplier. No supplier created."
     return
   end
-  supplier = Spree::Supplier.create(name: new_supplier_name, active: true)
+  supplier = Spree::Supplier.create!(name: new_supplier_name, active: true)
   user.update supplier_id: supplier.id
   Spree::Product.where(supplier_id: nil).update_all supplier_id: supplier.id
   puts 'Supplier successfully created.'
