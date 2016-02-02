@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_marketplace'
-  s.version     = '1.0.2'
+  s.version     = '1.0.3'
   s.summary     = 'Another marketplace extension for Spree Commerce'
   s.description = 'Based on spree_drop_ship extension. Added abilities to create products and variants by vendor.'
   s.required_ruby_version = '>= 2.0.0'
